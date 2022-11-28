@@ -1,0 +1,7 @@
+{
+  "name": "contrasena",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
