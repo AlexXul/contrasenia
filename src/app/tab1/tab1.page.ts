@@ -14,13 +14,8 @@ export class Tab1Page {
 
    checkPassword(valor:any){
     var myregex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/; 
-   if(myregex.test(valor.target.pwd1.value)){
-       alert(valor.target.pwd1.value+" es valido :-) !");
-               
-   }else{
-      alert(valor.target.pwd1.value+" NO es valido!");
-             
-   }  
+    return myregex.test(valor)
+
    }
     
     checkForm(form:any){
@@ -36,7 +31,7 @@ export class Tab1Page {
       return false;
     }
     if(form.pwd1.value != "" && form.pwd1.value == form.pwd2.value) {
-      if(!checkPassword(form.pwd1.value)) {
+      if(!this.checkPassword(form.pwd1.value)) {
         alert("La contraseña no es valida!");
         form.pwd1.focus();
         return false;
